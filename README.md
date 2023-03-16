@@ -1,1 +1,1 @@
-# .NET Kullanarak Bir Kitap Store Uygulaması İçin WebAPI Geliştirdim.
+# .NET Kullanarak Bir Book Store Uygulaması İçin WebAPI Geliştirdim.
