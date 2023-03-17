@@ -11,7 +11,7 @@ namespace WebApi.BookOperations.DeleteBook
             _dbContext = dbContext;
         }
 
-// updated
+// updated command
         public void Handle(int id)
         {
             var book = _dbContext.Books.Find(id);
