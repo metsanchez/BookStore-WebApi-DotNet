@@ -1,4 +1,5 @@
 using System.Data;
+using AutoMapper;
 using WebApi.Common;
 using WebApi.DBOperations;
 
@@ -7,31 +8,26 @@ namespace WebApi.BookOperations.GetBooks
     public class GetBookId
     {
         private readonly BookStoreDbContext _dbcontext;
+        private readonly IMapper _mapper;
 
-        public GetBookId(BookStoreDbContext dbcontext)
+        public int BookId { get; set; }
+
+        public GetBookId(BookStoreDbContext dbcontext, IMapper mapper)
         {
             _dbcontext = dbcontext;
+            _mapper = mapper;
         }
 
-        public List<GetIdViewModel> Handle(int id)
+        public GetIdViewModel Handle()
         {
-            var book = _dbcontext.Books.Where(x => x.Id == id).SingleOrDefault();
-            if (book!= null)
+            var book = _dbcontext.Books.Where(x => x.Id == BookId).SingleOrDefault();
+
+            if (book is null)
             {
-                List<GetIdViewModel> vm = new List<GetIdViewModel>();
-                vm.Add( new GetIdViewModel {
-                    Title = book.Title,
-                PageCount = book.PageCount,
-                PublishDate = book.PublishDate.Date.ToString("dd/MM/yyy"),
-                Genre = ((GenreEnum)book.GenreId).ToString()
-                });
-                
-                return vm;
+                throw new InvalidOperationException("Book not found");
             }
-            else
-            {
-                return null;
-            }
+            GetIdViewModel vm = _mapper.Map<GetIdViewModel>(book);
+            return vm;
         }
 
     }

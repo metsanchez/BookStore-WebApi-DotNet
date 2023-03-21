@@ -28,3 +28,5 @@ C:\Users\revios\Desktop\.Net Tutorial\BookStore\webapi\obj\Debug\net6.0\ref\WebA
 C:\Users\revios\Desktop\.Net Tutorial\BookStore\webapi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\revios\Desktop\.Net Tutorial\BookStore\webapi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\revios\Desktop\.Net Tutorial\BookStore\webapi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\revios\Desktop\.Net Tutorial\BookStore\webapi\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\revios\Desktop\.Net Tutorial\BookStore\webapi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
